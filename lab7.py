@@ -1,0 +1,19 @@
+img=cv.imread('coca-cola-logo.png')
+imgrev=img[:,:,:: -1]
+h,w,c=imgrev.shape
+topleft=imgrev[0:h//2,0:w//2]
+topright=imgrev[0:h//2,w//2:w]
+bottomleft=imgrev[h//2:h,0:w//2]
+bottomright=imgrev[h//2:h,w//2:w]
+plt.subplot(2,2,1)
+plt.imshow(topleft)
+plt.axis('off')
+plt.subplot(2,2,2)
+plt.imshow(topright)
+plt.axis('off')
+plt.subplot(2,2,3)
+plt.imshow(bottomleft)
+plt.axis('off')
+plt.subplot(2,2,4)
+plt.imshow(bottomright)
+plt.axis('off')

@@ -1,0 +1,6 @@
+img=cv.imread('chessboard.png')
+img_grey=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+edge=cv.Canny(img_grey,threshold1=100,threshold2=200)
+contours,hierarchy=cv.findContours(edge,cv.RETR_TREE,cv.CHAIN_APPROX_SIMPLE)
+cv.drawContours(img,contours,-1,(0,255,0),2)
+plt.imshow(img)
